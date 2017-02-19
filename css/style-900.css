@@ -1,0 +1,88 @@
+header{
+	height: 69px;
+}
+.wrapper{
+}
+button{
+	padding: 1%;
+	font-size: 120%;
+	border-radius: 8px;
+}
+.left-bar{
+	display: none;
+}
+
+.right-bar{
+	min-height: 0;
+	padding: 6%;
+	width: 100%;
+	text-align: center;
+	float: left;
+	margin: 0;
+	position: inherit;
+	margin-top: 50px;
+	border: none;
+}
+.right-bar span{
+	font-weight: bold;
+}
+.right-bar h1{
+	font-size: 22px;
+	}
+.right-bar button{
+	width: 10%;
+	float: inherit;
+	border-radius: 8px;
+}
+.right-bar li{
+	padding-bottom: 3%;
+}
+.main{
+	 text-align: center;
+	 width: 100%;
+	 clear: both;
+	 margin-top: 0%;
+	 position: inherit;
+	 float: left;
+	 padding-top: 0;
+	 padding-bottom: 17%;
+}
+
+.content{
+	font-size: 39px;
+	width: 100%;
+	padding-top: 5%;
+}
+
+.input-group{
+	width: 90%;
+}
+
+.input-group .form-control:first-child{
+	left: 0;
+}
+
+.input-group-btn:last-child>.btn{width: 100%;border-radius: 7px;background: #dbdbdb;}
+
+.input-group-btn{
+	top: 165%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+
+.checkbox{
+	width: 89%;
+	margin-top: 44px;
+}
+
+.checkbox label{
+	font-size: 12px;
+	line-height: 21px;
+}
+
+
+footer{
+	height:5%;
+}

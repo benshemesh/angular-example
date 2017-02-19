@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <title>Wheather</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" media="(max-width: 900px)" href="css/style-900.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body ng-app="myApp" ng-controller="mainCtrl" ng-cloak>
+    <header>
+		<button>Login</button>
+	</header>
+	<div class="wrapper" >
+		<div class="left-bar">
+			<h1>Latest search</h1>
+			<ul>
+				<li class="animate" ng-repeat="city in lastSearch | reverse | limitTo: 5 track by $index">
+					<a href ="#" ng-click="searchAgain()" >{{city}}</a>
+				</li>
+			</ul>
+		</div>
+		<div class="right-bar">
+			<h1>{{thisCity}}, {{country}}</h1>
+			<ul>
+				<li><span>Humidity: </span>{{humidity}}</li>
+				<li><span>Minimum Temp: </span>{{tempMin}}°</li>
+				<li><span>Maximum Temp: </span>{{tempMax}}°</li>
+				<li class="{{visibility}}">
+					<button ng-click="originalCity()" alt="back to origianl search">
+						<span class="glyphicon glyphicon-menu-left">
+						</span>
+					</button>
+				</li>
+			</ul>
+		</div>
+		<div class="main animate">
+			<div class="currentWheter">{{currentWheter}}</div>
+			<div class="content">
+				<p class="title">
+					{{thisCity}}<br>
+					<span>{{thisTemp}}°</span>
+				</p>
+				<img ng-src="{{icon}}">
+				<div class="input-group by-city">
+					<input type="text" class="form-control" my-enter="searchForCity()" ng-model="searchCity" placeholder="{{searchPlaceholder}}">
+					<span class="input-group-btn">
+						<button class="btn btn-secondary" ng-click="searchForCity()" type="button">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						</button>
+					</span>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" value="" ng-model="searchBy" ng-click="checkSearch()">{{checkBox}}</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer></footer>
+  </body>
+</html> 
